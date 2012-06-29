@@ -26,9 +26,8 @@
           %a.brand{:href => "http://0.0.0.0:3000"} Çıkış
           .container.nav-collapse
             %ul.nav
-              %li= link_to "HOME", "/path1"
-              %li= link_to "API", "/path2"
-              %li= link_to "ABOUT", "/path3"
+              %li= link_to "HOME", root_url
+
             %p.navbar-text.pull-right
               Logged in as
               %a{:href => "#"}= current_user.email if current_user
