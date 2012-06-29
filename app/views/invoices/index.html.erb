@@ -1,0 +1,35 @@
+<h1>Listing invoices</h1>
+
+<table>
+  <tr>
+    <th>Serial</th>
+    <th>Date</th>
+    <th>Amount</th>
+    <th>Vat</th>
+    <th>Total amount</th>
+    <th>Io</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @invoices.each do |invoice| %>
+  <tr>
+    <td><%= invoice.serial %></td>
+    <td><%= invoice.date %></td>
+    <td><%= invoice.amount %></td>
+    <td><%= invoice.vat %></td>
+    <td><%= invoice.total_amount %></td>
+    <td><%= invoice.io == 1 ? "Gelen" : "Giden" %></td>
+
+
+    <td><%= link_to 'Göster', invoice %></td>
+    <td><%= link_to 'Düzenle', edit_invoice_path(invoice) %></td>
+    <td><%= link_to 'Sil', invoice, method: :delete, data: { confirm: 'Silmek istiyor musun?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Yeni Fatura', new_invoice_path %>
