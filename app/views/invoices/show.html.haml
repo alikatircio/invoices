@@ -1,0 +1,23 @@
+%p#notice= notice
+= link_to image_tag(@invoice.photo.url(:small)),@invoice.photo.url(:original)
+%p
+%b Serial:
+= @invoice.serial
+%p
+%b Date:
+= @invoice.date
+%p
+%b Amount:
+= @invoice.amount
+%p
+%b Vat:
+= @invoice.vat
+%p
+%b Total amount:
+= @invoice.total_amount
+%p
+%b Io:
+= @invoice.io == 1 ? "Gelen" : "Giden"
+= link_to 'Düzenle', edit_invoice_path(@invoice)
+|
+\#{link_to 'Geri', invoices_path}

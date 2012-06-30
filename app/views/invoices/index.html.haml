@@ -1,0 +1,25 @@
+%h1 Listing invoices
+%table
+  %tr
+    %th Serial
+    %th Date
+    %th Amount
+    %th Vat
+    %th Total amount
+    %th Io
+    %th
+    %th
+    %th
+  - @invoices.each do |invoice|
+    %tr
+      %td= invoice.serial
+      %td= invoice.date
+      %td= invoice.amount
+      %td= invoice.vat
+      %td= invoice.total_amount
+      %td= invoice.io == 1 ? "Gelen" : "Giden"
+      %td= link_to 'Göster', invoice
+      %td= link_to 'Düzenle', edit_invoice_path(invoice)
+      %td= link_to 'Sil', invoice, method: :delete, data: { confirm: 'Silmek istiyor musun?' }
+%br/
+= link_to 'Yeni Fatura', new_invoice_path

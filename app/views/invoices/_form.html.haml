@@ -1,0 +1,9 @@
+= simple_form_for @invoice, :html => {:multipart => true}  do |f|
+  = f.error_notification
+  = f.input :serial
+  = f.input :date
+  = f.input :amount
+  = f.input :vat
+  = f.input :io, :collection => [['Gelen', 1], ['Giden', -1]], :as => :radio, :checked => 1
+  = f.input :photo
+  = f.button :submit
