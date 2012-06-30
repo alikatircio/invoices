@@ -1,9 +1,9 @@
 %h2 Giriş
 = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
   .form-inputs
-    = f.input :username, :required => false, :autofocus => true
-    = f.input :password, :required => false
-    = f.input :remember_me, :as => :boolean if devise_mapping.rememberable?
+    = f.input :username, :required => false, :autofocus => true, :label => "Kullanıcı Adı"
+    = f.input :password, :required => false, :label => "Şifre"
+    = f.input :remember_me, :as => :boolean if devise_mapping.rememberable? :label =>  "Beni Hatırla"
   .form-actions
-    = f.button :submit, "Giriş"
+    = f.button :submit, "Giriş", :class => 'btn-primary'
     = render "devise/shared/links"
