@@ -20,5 +20,5 @@
 .form-inputs
 = f.input :email, :required => true
 .form-actions
-= f.button :submit, "Onay talimatları tekrar gönder"
+= f.button :submit, "Onay talimatları tekrar gönder", :input_html => {:class => 'btn btn-danger' }
 = render "devise/shared/links"

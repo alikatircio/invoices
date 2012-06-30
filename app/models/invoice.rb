@@ -16,4 +16,12 @@ class Invoice < ActiveRecord::Base
   def calculate
     self.total_amount = self.amount + (self.amount*(self.vat/100.0))
   end
+  def self.search(q)
+    if q.blank?
+      where('1=1')
+    else
+      query = "%#{q}%"
+      where("invoices.serial LIKE :query", query: query )
+    end
+  end
 end

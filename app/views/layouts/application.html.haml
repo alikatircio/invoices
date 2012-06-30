@@ -45,6 +45,7 @@
             %div{:class => "alert alert-#{name}"}
               %a.close{"data-dismiss" => "alert", :href => "#"} &times;
               = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
+
     .container
       .wrapper.row-fluid
         .span12.wrap

@@ -1,5 +1,12 @@
 %h1 Listing invoices
-%table
+.input-prepend
+= form_tag('invoices', method: :get) do
+  .input-append
+    = text_field_tag :search, params[:search]
+    = button_tag "Ara", :class => 'btn btn-primary'
+
+
+%table.table.table-bordered
   %tr
     %th Serial
     %th Date
@@ -10,6 +17,7 @@
     %th
     %th
     %th
+
   - @invoices.each do |invoice|
     %tr
       %td= invoice.serial
@@ -18,8 +26,8 @@
       %td= invoice.vat
       %td= invoice.total_amount
       %td= invoice.io == 1 ? "Gelen" : "Giden"
-      %td= link_to 'Göster', invoice
-      %td= link_to 'Düzenle', edit_invoice_path(invoice)
-      %td= link_to 'Sil', invoice, method: :delete, data: { confirm: 'Silmek istiyor musun?' }
+      %td= link_to 'Göster', invoice, :class => 'btn btn-primary'
+      %td= link_to 'Düzenle', edit_invoice_path(invoice), :class => 'btn btn-info'
+      %td= link_to 'Sil', invoice, :class => 'btn btn-danger', method: :delete, data: { confirm: 'Silmek istiyor musun?' }
 %br/
 = link_to 'Yeni Fatura', new_invoice_path
