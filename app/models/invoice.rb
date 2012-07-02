@@ -4,7 +4,7 @@ class Invoice < ActiveRecord::Base
 
   attr_accessible :amount, :date, :io, :photo, :serial, :vat
 
-  validates :amount, :date, :io, :serial, :vat, :photo_file_name, :presence => true
+  validates :amount,  :io, :serial, :vat, :photo_file_name, :presence => true
   validates_numericality_of :amount,  :greater_than => 0, :less_than => 100000000
   validates_numericality_of :vat, :greater_than => 0, :less_than => 100
   validates :serial, :uniqueness => true

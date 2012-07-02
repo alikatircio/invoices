@@ -44,3 +44,5 @@ gem "paperclip", "~> 3.0"
 gem 'devise'
 
 gem 'haml-rails'
+gem 'show_for'
+gem 'responders'

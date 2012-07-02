@@ -3,7 +3,7 @@
   .form-inputs
     = f.input :username, :required => false, :autofocus => true, :label => "Kullanıcı Adı"
     = f.input :password, :required => false, :label => "Şifre"
-    = f.input :remember_me, :as => :boolean if devise_mapping.rememberable? :label =>  "Beni Hatırla"
+    = f.input :remember_me, :label => "Beni Hatırla", :as => :boolean if devise_mapping.rememberable?
   .form-actions
     = f.button :submit, "Giriş", :class => 'btn-primary'
     = render "devise/shared/links"
