@@ -1,13 +1,13 @@
 = show_for @invoice do |a|
-  = a.attribute :serial
-  = a.attribute :date
-  = a.attribute :amount
-  = a.attribute :vat
-  = a.attribute :io
+  = a.attribute :serial, :label => "Seri No"
+  = a.attribute :date, :label => "Tarih"
+  = a.attribute :amount, :label => "Fiyat"
+  = a.attribute :vat, :label => "KDV"
 
-  = a.attribute :io do
+
+  = a.attribute :io, :label =>"Gelen Fatura-Giden Fatura" do
     = @invoice.io == 1 ? "Gelen" : "Giden"
-  = a.attribute :photo do
+  = a.attribute :photo, :label => "Fatura Resmi" do
     = link_to image_tag(@invoice.photo.url(:small)),@invoice.photo.url(:original),:target => "_blank"
 
 = link_to 'Edit', edit_invoice_path(@invoice)

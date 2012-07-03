@@ -1,10 +1,10 @@
 = simple_form_for @invoice, :html => {:multipart => true}  do |f|
   = f.error_notification
   .form-inputs
-    = f.input :serial
-    = f.input :date
-    = f.input :amount
-    = f.input :vat
-    = f.input :io, :collection => [['Gelen', 1], ['Giden', -1]], :as => :radio, :checked => 1
-    = f.input :photo
+    = f.input :serial, :label => "Seri No"
+    = f.input :date, :label => "Tarih"
+    = f.input :amount, :label => "Fiyat"
+    = f.input :vat, :label => "KDV"
+    = f.input :io, :label => "Gelen Fatura-Giden Fatura", :collection => [['Gelen', 1], ['Giden', -1]], :as => :radio, :checked => 1
+    = f.input :photo, :label => "Fatura Resmi"
   = f.button :submit, :class => 'btn-primary'
