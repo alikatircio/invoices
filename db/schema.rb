@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120702084120) do
+ActiveRecord::Schema.define(:version => 20120628090210) do
 
   create_table "invoices", :force => true do |t|
     t.string   "serial"
@@ -30,12 +30,6 @@ ActiveRecord::Schema.define(:version => 20120702084120) do
   end
 
   add_index "invoices", ["user_id"], :name => "index_invoices_on_user_id"
-
-  create_table "products", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
