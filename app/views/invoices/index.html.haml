@@ -14,10 +14,6 @@
     %th KDV
     %th Toplam Fiyat
     %th Gelen Fatura-Giden Fatura
-    %th
-    %th
-    %th
-
   - @invoices.each do |invoice|
     %tr
       %td= invoice.serial
@@ -30,4 +26,4 @@
       %td= link_to 'Düzenle', edit_invoice_path(invoice), :class => 'btn btn-info'
       %td= link_to 'Sil', invoice, :class => 'btn btn-danger', method: :delete, data: { confirm: 'Silmek istiyor musun?' }
 %br/
-= link_to 'Yeni Fatura', new_invoice_path
+= link_to 'Yeni Fatura', new_invoice_path, :class => 'btn'
