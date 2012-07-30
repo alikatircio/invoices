@@ -43,8 +43,8 @@ Cari::Application.configure do
       :address              => "smtp.gmail.com",
       :port                 => 587,
       :domain               => 'www.invoice.com',
-      :user_name            => 'your mail',
-      :password             => 'your password',
+      :user_name            => 'railstestrails@gmail.com',
+      :password             => 'tomlab2023',
       :authentication       => 'plain',
       :enable_starttls_auto => true
   }
