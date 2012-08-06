@@ -3,6 +3,8 @@ Cari::Application.routes.draw do
 
   resources :invoices
 
+  mount WillFilter::Engine => "/will_filter"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -5,7 +5,7 @@ class InvoicesController < ApplicationController
   # GET /invoices
   # GET /invoices.json
   def index
-    @invoices = current_user.invoices .search(params[:search])
+    @invoices = Invoice.filter(:params => params)
     respond_with(@invoices)
   end
 
